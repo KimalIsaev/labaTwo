@@ -7,7 +7,10 @@
 class PlusMethodUnit : public AbstractMethodUnit
 {
 public:
-    PlusMethodUnit();
+    enum Modifier{
+        VIRTUAL = 1 << 2,
+    };
+    std::string compile(unsigned int) const;
 };
 
 #endif // PLUSMETODUNIT_H

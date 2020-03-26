@@ -8,7 +8,7 @@ class AbstractPrintUnit: protected Unit
 public:
     explicit AbstractPrintUnit(const std::string& text):
         printText(text) {}
-private:
+protected:
     std::string printText;
 };
 

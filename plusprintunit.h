@@ -6,7 +6,9 @@
 class PlusPrintUnit : public AbstractPrintUnit
 {
 public:
-    PlusPrintUnit();
+    std::string compile(unsigned int level = 0) const {
+        return generateShift(level) + "print(\"" + printText +"\");\n";
+    }
 };
 
 #endif // PLUSPRINTUNIT_H

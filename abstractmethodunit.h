@@ -12,7 +12,7 @@ public:
     };
     AbstractMethodUnit(const std::string&, const std::string&, Flags);
     void add(const UnitPointer&, Flags);
-private:
+protected:
     std::string methodName;
     std::string methodReturnType;
     Flags methodModifier;
