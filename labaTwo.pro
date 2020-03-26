@@ -19,7 +19,6 @@ SOURCES += \
         abstractlanguage.cpp \
         abstractmethodunit.cpp \
         abstractprintunit.cpp \
-        classunit.cpp \
         interpreter.cpp \
         interpretercreator.cpp \
         javaclassunit.cpp \
@@ -27,12 +26,10 @@ SOURCES += \
         javamethodunit.cpp \
         javaprintunit.cpp \
         main.cpp \
-        methodunit.cpp \
         plusclassunit.cpp \
         pluslanguage.cpp \
         plusmethodunit.cpp \
         plusprintunit.cpp \
-        printunit.cpp \
         sharpclassunit.cpp \
         sharplanguage.cpp \
         sharpmethodunit.cpp \
@@ -48,19 +45,16 @@ HEADERS += \
     abstractlanguage.h \
     abstractmethodunit.h \
     abstractprintunit.h \
-    classunit.h \
     interpreter.h \
     interpretercreator.h \
     javaclassunit.h \
     javalanguage.h \
     javamethodunit.h \
     javaprintunit.h \
-    methodunit.h \
     plusclassunit.h \
     pluslanguage.h \
     plusmethodunit.h \
     plusprintunit.h \
-    printunit.h \
     sharpclassunit.h \
     sharplanguage.h \
     sharpmethodunit.h \
