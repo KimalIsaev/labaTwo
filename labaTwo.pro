@@ -15,9 +15,54 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-        main.cpp
+        abstractclassunit.cpp \
+        abstractlanguage.cpp \
+        abstractmethodunit.cpp \
+        abstractprintunit.cpp \
+        classunit.cpp \
+        interpreter.cpp \
+        interpretercreator.cpp \
+        javaclassunit.cpp \
+        javalanguage.cpp \
+        javamethodunit.cpp \
+        javaprintunit.cpp \
+        main.cpp \
+        methodunit.cpp \
+        plusclassunit.cpp \
+        pluslanguage.cpp \
+        plusmethodunit.cpp \
+        plusprintunit.cpp \
+        printunit.cpp \
+        sharpclassunit.cpp \
+        sharplanguage.cpp \
+        sharpmethodunit.cpp \
+        sharpprintunit.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+HEADERS += \
+    abstractclassunit.h \
+    abstractlanguage.h \
+    abstractmethodunit.h \
+    abstractprintunit.h \
+    classunit.h \
+    interpreter.h \
+    interpretercreator.h \
+    javaclassunit.h \
+    javalanguage.h \
+    javamethodunit.h \
+    javaprintunit.h \
+    methodunit.h \
+    plusclassunit.h \
+    pluslanguage.h \
+    plusmethodunit.h \
+    plusprintunit.h \
+    printunit.h \
+    sharpclassunit.h \
+    sharplanguage.h \
+    sharpmethodunit.h \
+    sharpprintunit.h \
+    unit.h
