@@ -3,7 +3,7 @@
 
 #include "unit.h"
 
-class AbstractMethodUnit: Unit
+class AbstractMethodUnit: protected Unit
 {
 public:
     enum Modifier{

@@ -6,7 +6,7 @@
 class PlusClassUnit : public AbstractClassUnit
 {
 public:
-    PlusClassUnit();
+    std::string compile(unsigned int) const;
 };
 
 #endif // PLUSCLASSUNIT_H

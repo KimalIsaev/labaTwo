@@ -4,7 +4,7 @@
 #include "unit.h"
 #include <vector>
 
-class AbstractClassUnit : Unit
+class AbstractClassUnit : protected Unit
 {
 public:
     enum AccessModifier {
@@ -18,7 +18,7 @@ public:
     }
     void add(const UnitPointer&, Flags);
 
-private:
+protected:
     std::string className;
     std::vector<UnitVector> modifierFieldVector;
 };

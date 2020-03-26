@@ -3,7 +3,7 @@
 
 #include "unit.h"
 
-class AbstractPrintUnit: Unit
+class AbstractPrintUnit: protected Unit
 {
 public:
     explicit AbstractPrintUnit(const std::string& text):
