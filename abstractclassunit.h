@@ -4,7 +4,7 @@
 #include "unit.h"
 #include <vector>
 
-class AbstractClassUnit : protected Unit
+class AbstractClassUnit : public Unit
 {
 public:
     enum AccessModifier {

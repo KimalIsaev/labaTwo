@@ -3,12 +3,13 @@
 
 #include "unit.h"
 
-class AbstractMethodUnit: protected Unit
+class AbstractMethodUnit: public Unit
 {
 public:
     enum Modifier{
         STATIC = 1,
-        CONST = 1 << 1
+        CONST = 1 << 1,
+        VIRTUAL = 1 << 2
     };
     AbstractMethodUnit(const std::string&, const std::string&, Flags);
     void add(const UnitPointer&, Flags);

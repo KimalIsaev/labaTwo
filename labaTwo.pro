@@ -19,8 +19,6 @@ SOURCES += \
         abstractlanguage.cpp \
         abstractmethodunit.cpp \
         abstractprintunit.cpp \
-        interpreter.cpp \
-        interpretercreator.cpp \
         javaclassunit.cpp \
         javalanguage.cpp \
         javamethodunit.cpp \
@@ -45,8 +43,6 @@ HEADERS += \
     abstractlanguage.h \
     abstractmethodunit.h \
     abstractprintunit.h \
-    interpreter.h \
-    interpretercreator.h \
     javaclassunit.h \
     javalanguage.h \
     javamethodunit.h \

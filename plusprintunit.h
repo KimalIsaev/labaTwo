@@ -6,8 +6,9 @@
 class PlusPrintUnit : public AbstractPrintUnit
 {
 public:
-    std::string compile(unsigned int level = 0) const {
-        return generateShift(level) + "print(\"" + printText +"\");\n";
+    PlusPrintUnit(const std::string& text): AbstractPrintUnit(text){}
+    std::string compile(unsigned int level = 0, bool firstTab = 1) const {
+        return (firstTab?generateShift(level):"") + "print(\"" + printText +"\");\n";
     }
 };
 

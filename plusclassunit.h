@@ -6,7 +6,8 @@
 class PlusClassUnit : public AbstractClassUnit
 {
 public:
-    std::string compile(unsigned int) const;
+    PlusClassUnit(const std::string& name):  AbstractClassUnit(name){}
+    std::string compile(unsigned int level = 0, bool firtTab = 1) const;
 };
 
 #endif // PLUSCLASSUNIT_H

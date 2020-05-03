@@ -3,7 +3,8 @@
 Interpreter* InterpreterCreator::createInterpreter(AbstractLanguage& language)
 {
     Interpreter* p = new Interpreter;
-    p->classUnitVector.push_back(language.createClassUnit());
-    p->methodUnitListVector.push_back(language.createMethodUnit());
-    p->printUnitVector.push_back(language.createPrintUnit());
+    p->classUnitList.push_back(language.createClassUnit());
+    p->methodUnitList.push_back(language.createMethodUnit());
+    p->printUnitList.push_back(language.createPrintUnit());
+    return p;
 }

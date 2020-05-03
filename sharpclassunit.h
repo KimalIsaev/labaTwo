@@ -6,7 +6,8 @@
 class SharpClassUnit : public AbstractClassUnit
 {
 public:
-    SharpClassUnit();
+    SharpClassUnit(const std::string& name):  AbstractClassUnit(name){}
+    std::string compile(unsigned int level = 0, bool firtTab = 1) const;
 };
 
 #endif // SHARPCLASSUNIT_H
