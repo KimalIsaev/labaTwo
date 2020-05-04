@@ -29,6 +29,11 @@ std::string generateProgram(AbstractLanguage* lang) {
      return myClass->compile();
 }
 
+std::string generateSharpProgram() {
+    SharpClassUnit myClass = SharpClassUnit("MyClass", 1);
+    return myClass.compile();
+}
+
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -36,11 +41,9 @@ int main(int argc, char *argv[])
     PlusLanguage p;
     SharpLanguage s;
     JavaLanguage j;
-    //AbstractClassUnit* pc = p.createClassUnit("a");
-    //std::cout << pc->compile() << std::endl;
     cout <<"C++:\n" << generateProgram(&p) << endl;
     cout <<"C#:\n" << generateProgram(&s) << endl;
     cout <<"JAVA:\n" << generateProgram(&j) << endl;
-
+    cout <<"C#:\n" << generateSharpProgram() << endl;
     return a.exec();
 }

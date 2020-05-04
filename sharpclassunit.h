@@ -5,9 +5,11 @@
 
 class SharpClassUnit : public AbstractClassUnit
 {
+    bool internal_ = 0;
 public:
-    SharpClassUnit(const std::string& name):  AbstractClassUnit(name){}
+    SharpClassUnit(const std::string& name, bool internal = 0):  AbstractClassUnit(name), internal_(internal){}
     std::string compile(unsigned int level = 0, bool firtTab = 1) const;
+
 };
 
 #endif // SHARPCLASSUNIT_H

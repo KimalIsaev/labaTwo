@@ -2,7 +2,7 @@
 
 
 std::string SharpClassUnit::compile(unsigned int level, bool firstTab) const{
-    std::string result = (firstTab?generateShift(level):"") + "class " + className + " {\n";
+    std::string result = (firstTab?generateShift(level):"") + (internal_?"internal ":"") + "class " + className + " {\n";
 
     for (size_t i = 0; i < ACCESS_MODIFIERS.size(); ++i) {
         if(modifierFieldVector[i].empty())
