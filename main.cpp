@@ -9,11 +9,11 @@ std::string generateProgram(AbstractLanguage* lang) {
      AbstractClassUnit* myClass = lang->createClassUnit("MyClass"/*, AbstractClassUnit::PUBLIC*/ );
 
      myClass->add(
-         std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc1", "void", 0 )),
+         std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc1", "void", AbstractMethodUnit::FINAL )),
          AbstractClassUnit::PUBLIC
      );
      myClass->add(
-         std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc2", "void", AbstractMethodUnit::STATIC )),
+         std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc2", "void", AbstractMethodUnit::STATIC | AbstractMethodUnit::FINAL)),
          AbstractClassUnit::PRIVATE
      );
      myClass->add(
@@ -21,14 +21,14 @@ std::string generateProgram(AbstractLanguage* lang) {
          AbstractClassUnit::PRIVATEPROTECTED
      );
      myClass->add(
-                 std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc2", "void", AbstractMethodUnit::STATIC )),
+                 std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc2", "void", AbstractMethodUnit::STATIC | AbstractMethodUnit::FINAL)),
                  AbstractClassUnit::ABSTRACT
              );
      myClass->add(
          std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc3", "void", AbstractMethodUnit::VIRTUAL | AbstractMethodUnit::CONST )),
          AbstractClassUnit::PUBLIC
      );
-     auto method = std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc4", "void", AbstractMethodUnit::STATIC ));
+     auto method = std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc4", "void", AbstractMethodUnit::STATIC | AbstractMethodUnit::FINAL));
      method->add(std::shared_ptr<AbstractPrintUnit>(lang->createPrintUnit( R"(Hello,world!\n)")),0 );
      myClass->add( method, AbstractClassUnit::PROTECTED );
      return myClass->compile();

@@ -9,7 +9,8 @@ public:
     enum Modifier{
         STATIC = 1,
         CONST = 1 << 1,
-        VIRTUAL = 1 << 2
+        VIRTUAL = 1 << 2,
+        FINAL = 1 << 3
     };
     AbstractMethodUnit(const std::string&, const std::string&, Flags);
     void add(const UnitPointer&, Flags);

@@ -6,7 +6,8 @@ std::string JavaMethodUnit::compile(unsigned int level, bool firtTab) const{
         result = generateShift(level);
     if (methodModifier&STATIC){
         result += "static ";
-    }else if(!(methodModifier&VIRTUAL)){
+    }
+    if(methodModifier&FINAL){
         result += "final ";
     }
     result += methodReturnType + " ";
