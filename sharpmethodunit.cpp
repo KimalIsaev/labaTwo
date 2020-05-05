@@ -11,9 +11,9 @@ std::string SharpMethodUnit::compile(unsigned int level, bool firstTab) const{
         result += "virtual ";
     }
     result += methodReturnType + " ";
-    result += "() ";
+    result += methodName + "() ";
     if (methodModifier&CONST)
-        result +=methodName + " const";
+        result += " const";
     result += " {\n";
 
     for (const UnitPointer& unitPointer: methodBody)

@@ -1,7 +1,7 @@
 #include "sharplanguage.h"
 
-AbstractClassUnit* SharpLanguage::createClassUnit(const std::string& name){
-    return new SharpClassUnit(name);
+AbstractClassUnit* SharpLanguage::createClassUnit(const std::string& name, Flags modifier){
+    return new SharpClassUnit(name, modifier);
 }
 
 AbstractMethodUnit* SharpLanguage::createMethodUnit(const std::string& name, const std::string& returnType, Flags flags){

@@ -6,10 +6,7 @@
 using namespace std;
 
 std::string generateProgram(AbstractLanguage* lang) {
-     AbstractClassUnit* myClass = lang->createClassUnit("MyClass");
-     myClass->add( std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit("testFunc1", "void", 0)),
-                   AbstractClassUnit::PUBLIC
-                   );
+     AbstractClassUnit* myClass = lang->createClassUnit("MyClass"/*, AbstractClassUnit::PUBLIC*/ );
 
      myClass->add(
          std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc1", "void", 0 )),
@@ -20,6 +17,14 @@ std::string generateProgram(AbstractLanguage* lang) {
          AbstractClassUnit::PRIVATE
      );
      myClass->add(
+         std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc2", "void", AbstractMethodUnit::STATIC )),
+         AbstractClassUnit::PRIVATEPROTECTED
+     );
+     myClass->add(
+                 std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc2", "void", AbstractMethodUnit::STATIC )),
+                 AbstractClassUnit::ABSTRACT
+             );
+     myClass->add(
          std::shared_ptr<AbstractMethodUnit>(lang->createMethodUnit( "testFunc3", "void", AbstractMethodUnit::VIRTUAL | AbstractMethodUnit::CONST )),
          AbstractClassUnit::PUBLIC
      );
@@ -29,21 +34,16 @@ std::string generateProgram(AbstractLanguage* lang) {
      return myClass->compile();
 }
 
-std::string generateSharpProgram() {
-    SharpClassUnit myClass = SharpClassUnit("MyClass", 1);
-    return myClass.compile();
-}
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
+    cout << AbstractClassUnit::PUBLIC  << endl;
     PlusLanguage p;
     SharpLanguage s;
     JavaLanguage j;
     cout <<"C++:\n" << generateProgram(&p) << endl;
     cout <<"C#:\n" << generateProgram(&s) << endl;
     cout <<"JAVA:\n" << generateProgram(&j) << endl;
-    cout <<"C#:\n" << generateSharpProgram() << endl;
     return a.exec();
 }

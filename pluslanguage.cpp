@@ -1,8 +1,8 @@
 #include "pluslanguage.h"
 
 
-AbstractClassUnit* PlusLanguage::createClassUnit(const std::string& name){
-    return new PlusClassUnit(name);
+AbstractClassUnit* PlusLanguage::createClassUnit(const std::string& name, Flags modifier){
+    return new PlusClassUnit(name, modifier);
 }
 
 AbstractMethodUnit* PlusLanguage::createMethodUnit(const std::string& name, const std::string& returnType, Flags flags){

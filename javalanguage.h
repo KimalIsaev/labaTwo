@@ -11,7 +11,7 @@ using Flags = unsigned int;
 class JavaLanguage : public AbstractLanguage
 {
 public:
-        AbstractClassUnit* createClassUnit(const std::string& name);
+        AbstractClassUnit* createClassUnit(const std::string& name, Flags modifier = 0);
         AbstractMethodUnit* createMethodUnit(const std::string& name, const std::string& returnType, Flags flags);
         AbstractPrintUnit* createPrintUnit(const std::string& text);
 };

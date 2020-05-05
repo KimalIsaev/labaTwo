@@ -2,12 +2,14 @@
 #define JAVACLASSUNIT_H
 
 #include "abstractclassunit.h"
+#include <array>
+#include <algorithm>
 
 class JavaClassUnit : public AbstractClassUnit
 {
-    bool publicOrNot = 0;
+    static const constexpr std::array<Flags,5> supportedModifier{PUBLIC, PRIVATE, PROTECTED, FINAL, ABSTRACT};
 public:
-    JavaClassUnit(const std::string& name):  AbstractClassUnit(name){}
+    JavaClassUnit(const std::string& name, Flags modifier = 0):  AbstractClassUnit(name, modifier){}
     std::string compile(unsigned int level = 0, bool firtTab = 0) const;
 };
 

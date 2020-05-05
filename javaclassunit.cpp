@@ -1,10 +1,14 @@
 #include "javaclassunit.h"
 
 std::string JavaClassUnit::compile(unsigned int level, bool firstTab) const{
-    std::string result = (firstTab?generateShift(level):"") + "public class " + className + " {\n";
+    std::string result = (firstTab?generateShift(level):"");
+
+    if (std::find(supportedModifier.begin(), supportedModifier.end(), classdModifier) != supportedModifier.end())
+        result += ACCESS_MODIFIERS[classdModifier] + " ";
+    result += "class " + className + " {\n";
 
     for (size_t i = 0; i < ACCESS_MODIFIERS.size(); ++i) {
-        if(modifierFieldVector[i].empty())
+        if(modifierFieldVector[i].empty() || (std::find(supportedModifier.begin(), supportedModifier.end(), i) == supportedModifier.end()))
             continue;
 
 
