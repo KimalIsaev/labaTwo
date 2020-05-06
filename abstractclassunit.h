@@ -2,7 +2,7 @@
 #define ABSTRACTCLASSUNIT_H
 
 #include "unit.h"
-#include <vector>
+
 
 class AbstractClassUnit : public Unit
 {
@@ -13,15 +13,13 @@ public:
         PRIVATE,
         INTERNAL,
         PROTECTEDINTERNAL,
-        PRIVATEPROTECTED,
-        FINAL,
-        ABSTRACT
+        PRIVATEPROTECTED
     };
-    static const std::vector<std::string> ACCESS_MODIFIERS;
+    static const std::array<std::string, 7> ACCESS_MODIFIERS;
     explicit AbstractClassUnit(const std::string& name, Flags modifier): className(name),  classdModifier(modifier){
         modifierFieldVector.resize(ACCESS_MODIFIERS.size());
     }
-    void add(const UnitPointer&, Flags);
+    void add(const UnitPointer&, Flags = 0);
 protected:
     std::string className;
     std::vector<UnitVector> modifierFieldVector;
