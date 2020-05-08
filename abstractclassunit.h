@@ -16,14 +16,14 @@ public:
         PRIVATEPROTECTED
     };
     static const std::array<std::string, 7> ACCESS_MODIFIERS;
-    explicit AbstractClassUnit(const std::string& name, Flags modifier): className(name),  classdModifier(modifier){
+    explicit AbstractClassUnit(const std::string& name, Flags modifier): className(name),  classModifier(modifier){
         modifierFieldVector.resize(ACCESS_MODIFIERS.size());
     }
     void add(const UnitPointer&, Flags = 0);
 protected:
     std::string className;
     std::vector<UnitVector> modifierFieldVector;
-    Flags classdModifier;
+    Flags classModifier;
 };
 
 #endif // ABSTRACTCLASSUNIT_H

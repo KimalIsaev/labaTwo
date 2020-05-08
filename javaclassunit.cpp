@@ -3,8 +3,8 @@
 std::string JavaClassUnit::compile(unsigned int level, bool firstTab) const{
     std::string result = (firstTab?generateShift(level):"");
 
-    if (std::find(supportedModifier.begin(), supportedModifier.end(), classdModifier) != supportedModifier.end())
-        result += ACCESS_MODIFIERS[classdModifier] + " ";
+    if (std::find(supportedModifier.begin(), supportedModifier.end(), classModifier) != supportedModifier.end())
+        result += ACCESS_MODIFIERS[classModifier] + " ";
     result += "class " + className + " {\n";
 
     for (size_t i = 0; i < ACCESS_MODIFIERS.size(); ++i) {
