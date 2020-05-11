@@ -22,16 +22,13 @@ SOURCES += \
         javaclassunit.cpp \
         javalanguage.cpp \
         javamethodunit.cpp \
-        javaprintunit.cpp \
         main.cpp \
         plusclassunit.cpp \
         pluslanguage.cpp \
         plusmethodunit.cpp \
-        plusprintunit.cpp \
         sharpclassunit.cpp \
         sharplanguage.cpp \
-        sharpmethodunit.cpp \
-        sharpprintunit.cpp
+        sharpmethodunit.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
