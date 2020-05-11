@@ -1,9 +1,7 @@
 #include "javamethodunit.h"
 
-std::string JavaMethodUnit::compile(unsigned int level, bool firtTab) const{
-    std::string result;
-    if (firtTab)
-        result = generateShift(level);
+std::string JavaMethodUnit::compile(unsigned int level, bool firstTab) const{
+    std::string result = (firstTab?generateShift(level):"");
     unsigned long indexOfFlag = 1;
     for (unsigned int i=0; i < MODIFIERS.size(); i++, indexOfFlag*=2)
         if ((indexOfFlag&methodModifier)&&(std::find(supporteModifier.begin(), supporteModifier.end(), indexOfFlag) != supporteModifier.end())){

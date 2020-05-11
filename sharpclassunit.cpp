@@ -12,7 +12,7 @@ std::string SharpClassUnit::compile(unsigned int level, bool firstTab) const{
             continue;
 
         for (const UnitPointer& unitPointer: modifierFieldVector[i])
-            result += generateShift(level+1) + ACCESS_MODIFIERS[i] + " " + unitPointer->compile(level + 1, firstTab);
+            result += generateShift(level+1) + ACCESS_MODIFIERS[i] + " " + unitPointer->compile(level + 1, 0);
         result += "\n";
     }
     result += generateShift(level) + "};\n";

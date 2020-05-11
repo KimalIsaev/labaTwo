@@ -9,7 +9,7 @@ std::string PlusClassUnit::compile(unsigned int level, bool firstTab) const{
 
         result += ACCESS_MODIFIERS[i] + ":\n";
         for (const UnitPointer& unitPointer: modifierFieldVector[i])
-            result += unitPointer->compile(level + 1, firstTab);
+            result += unitPointer->compile(level + 1, 1);
         result += "\n";
     }
     result += generateShift(level) + "};\n";

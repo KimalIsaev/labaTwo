@@ -35,7 +35,6 @@ std::string generateProgram(AbstractLanguage* lang) {
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    cout << AbstractClassUnit::PUBLIC  << endl;
     PlusLanguage p;
     SharpLanguage s;
     JavaLanguage j;

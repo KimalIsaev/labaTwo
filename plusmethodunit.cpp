@@ -1,9 +1,7 @@
 #include "plusmethodunit.h"
 
 std::string PlusMethodUnit::compile(unsigned int level, bool firstTab) const{
-    std::string result;
-    if (firstTab)
-        result = generateShift(level);
+    std::string result = (firstTab?generateShift(level):"");
     result += methodModifierToModifiers(beforeModifier.begin(), beforeModifier.end());
     result += methodReturnType + " ";
     result += methodName + "() ";
