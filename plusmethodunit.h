@@ -8,7 +8,7 @@
 class PlusMethodUnit : public AbstractMethodUnit
 {
     static const constexpr std::array<Flags,2> beforeModifier{VIRTUAL, STATIC};
-    static const constexpr std::array<Flags,2> afterModifier{CONST, OVERRIDE};
+    static const constexpr std::array<Flags,3> afterModifier{CONST, OVERRIDE, FINAL};
 public:
     PlusMethodUnit(const std::string& name, const std::string& returnType, Flags
                    flags ):  AbstractMethodUnit (name,returnType, flags){}
